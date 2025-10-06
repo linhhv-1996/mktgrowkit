@@ -1,8 +1,11 @@
 <script setup>
 useHead({
-    title: 'Free Marketing Calculators for Indie Devs & Creators | mktgrowkit',
+    title: 'mktgrowkit - Free Marketing & Growth Tools for Builders',
     meta: [
-        { name: 'description', content: 'Boost your growth with our free marketing calculators: ROAS, CPM/CPC, and AOV. Simple, no-fluff tools designed for data-driven indie hackers, developers, and creators.' }
+        {
+            name: 'description',
+            content: 'A free suite of essential marketing and growth tools. Calculate ROAS, CPM, AOV and more to make data-driven decisions and grow your business.'
+        },
     ],
     link: [
         { rel: 'canonical', href: 'https://mktgrowkit.com/' }
@@ -55,12 +58,11 @@ async function subscribe() {
                 <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 leading-tight tracking-tight">
                     Stop Guessing. <span class="gradient-text">Start Growing.</span>
                 </h1>
+
                 <p class="mt-4 max-w-2xl mx-auto text-base text-slate-600">
-                    A curated kit of essential, no‑fluff marketing calculators for <span
-                        class="font-semibold text-slate-900">indie hackers, creators, and solo marketers</span>. Make
-                    data-driven decisions on ad spend, campaign costs, and customer value—without the enterprise price
-                    tag.
+                    A curated suite of essential, no-fluff tools for <span class="font-semibold text-slate-900">founders, builders, and marketers</span>. From calculating metrics to generating copy, we help you grow faster and smarter.
                 </p>
+
                 <div class="mt-8 flex justify-center gap-4">
                     <a href="#tools" class="px-7 py-3 font-bold text-slate-900 bg-violet-300 rounded-lg neo-btn">Explore
                         Free Tools →</a>

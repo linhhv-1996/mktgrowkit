@@ -11,10 +11,12 @@ body {
   box-shadow: 4px 4px 0px #0f172a;
   transition: all 0.15s ease-in-out;
 }
-.neo-btn:hover {
+
+.neo-btn:hover, .xx:hover {
   transform: translate(2px, 2px);
   box-shadow: 2px 2px 0px #0f172a;
 }
+
 .neo-btn:active {
   transform: translate(4px, 4px);
   box-shadow: 0 0 0 #0f172a;

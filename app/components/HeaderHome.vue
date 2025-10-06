@@ -18,6 +18,7 @@ const toggleMobileMenu = () => {
       <div class="flex items-center space-x-4 md:space-x-6">
         <a href="/#tools" class="hidden md:inline-block text-sm font-semibold text-slate-700 hover:text-slate-900 transition-colors">Free Tools</a>
         <a href="/#from-the-builder" class="hidden md:inline-block text-sm font-semibold text-slate-700 hover:text-slate-900 transition-colors">From The Builder</a>
+        <a href="/blog" class="hidden md:inline-block text-sm font-semibold text-slate-700 hover:text-slate-900 transition-colors">Blog</a>
         <a href="/#newsletter" class="px-4 py-2 text-sm font-bold text-slate-900 bg-sky-400 rounded-lg neo-btn whitespace-nowrap">Get Updates</a>
         <button id="mobile-menu-button" class="md:hidden text-slate-800" aria-label="Toggle menu" @click="toggleMobileMenu">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path></svg>
@@ -28,6 +29,7 @@ const toggleMobileMenu = () => {
       <div class="container mx-auto px-6 py-3 max-w-5xl space-y-2">
         <a href="/#tools" class="block font-bold text-slate-800" @click="isMobileMenuOpen = false">Free Tools</a>
         <a href="/#from-the-builder" class="block font-bold text-slate-800" @click="isMobileMenuOpen = false">From The Builder</a>
+        <a href="/blog" class="block font-bold text-slate-800">Blog</a>
       </div>
     </div>
   </header>
