@@ -2,7 +2,7 @@ export const posts = [
   {
     slug: 'master-roas-calculator-guide',
     title: 'Master Your Ad Spend: The Ultimate ROAS Calculator Guide for Modern Marketers',
-    date: 'October 10, 2025',
+    date: 'October 06, 2025',
     author: 'Max Wang',
     excerpt: 'Learn how to effectively use a ROAS calculator to optimize ad spend, measure campaign profitability...',
     content: `
@@ -52,7 +52,7 @@ export const posts = [
   {
     slug: 'cpm-cpc-calculator-guide',
     title: 'Decode Your Ad Costs: A Complete Guide to CPM & CPC Calculators',
-    date: 'October 8, 2025',
+    date: 'October 05, 2025',
     author: 'Max Wang',
     excerpt: 'Master the fundamentals of online advertising costs. Our CPM and CPC calculator guide helps founders and marketers understand...',
     content: `
@@ -96,7 +96,7 @@ export const posts = [
   {
     slug: 'boost-revenue-aov-calculator-guide',
     title: 'Boost Your Bottom Line: The Essential AOV Calculator Guide for E-commerce & SaaS',
-    date: 'October 3, 2025',
+    date: 'October 05, 2025',
     author: 'Max Wang',
     excerpt: 'Discover how to use an AOV calculator to understand average customer value, identify growth opportunities, and...',
     content: `
