@@ -8,6 +8,44 @@ useHead({
         { rel: 'canonical', href: 'https://mktgrowkit.com/' }
     ]
 })
+
+// State để lưu email từ input
+const email = ref('')
+// State để quản lý trạng thái loading
+const isLoading = ref(false)
+// State để hiển thị message sau khi submit
+const message = ref('')
+const isError = ref(false)
+
+async function subscribe() {
+    if (!email.value) {
+        isError.value = true
+        message.value = 'Please enter a valid email address.'
+        return
+    }
+
+    isLoading.value = true
+    message.value = ''
+    isError.value = false
+
+    try {
+        // Gọi tới API route `/api/subscribe` vừa tạo
+        await $fetch('/api/subscribe', {
+            method: 'POST',
+            body: { email: email.value }
+        })
+
+        message.value = "🎉 Success! Please check your email to confirm."
+        email.value = ''
+
+    } catch (error) {
+        isError.value = true
+        message.value = error.data?.message || 'An unexpected error occurred. Please try again.'
+    } finally {
+        isLoading.value = false
+    }
+}
+
 </script>
 
 <template>
@@ -142,13 +180,22 @@ useHead({
                     story. No spam, just pure value.</p>
                 <ClientOnly>
                     <div>
-                        <form action="#" method="POST" class="flex flex-col md:flex-row gap-3 justify-center">
-                            <input type="email" placeholder="you@company.com" required
-                                class="w-full md:w-auto flex-grow px-4 py-3 rounded-lg text-sm border-2 border-slate-900 focus:outline-none" />
-                            <button type="submit"
-                                class="px-6 py-3 font-bold text-slate-900 bg-sky-400 rounded-lg neo-btn">Subscribe</button>
+                        <form @submit.prevent="subscribe" class="flex flex-col md:flex-row gap-3 justify-center">
+                            <input 
+                                v-model="email"
+                                type="email" 
+                                placeholder="you@company.com" 
+                                required
+                                :disabled="isLoading"
+                                class="w-full md:w-auto flex-grow px-4 py-3 rounded-lg text-sm border-2 border-slate-900 focus:outline-none disabled:bg-slate-100 disabled:cursor-not-allowed" />
+                            <button 
+                                type="submit"
+                                :disabled="isLoading"
+                                class="px-6 py-3 font-bold text-slate-900 bg-sky-400 rounded-lg neo-btn disabled:bg-sky-200 disabled:cursor-not-allowed">
+                                {{ isLoading ? 'Subscribing...' : 'Subscribe' }}
+                            </button>
                         </form>
-                        <p id="prof" class="mt-4 text-xs text-slate-600 font-medium">Join 150+ other builders and
+                        <p id="prof" class="mt-4 text-xs text-slate-600 font-medium">Join 100+ other builders and
                             marketers!</p>
                     </div>
                 </ClientOnly>
@@ -157,9 +204,3 @@ useHead({
     </div>
 </template>
 
-<style scoped>
-#prof {
-    color: #da1111;
-    text-align: left;
-}
-</style>
