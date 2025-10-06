@@ -1,0 +1,47 @@
+body {
+  font-family: 'Inter', sans-serif;
+}
+.gradient-text {
+  background: linear-gradient(90deg, #000, #000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.neo-btn {
+  border: 2px solid #0f172a; /* slate-900 */
+  box-shadow: 4px 4px 0px #0f172a;
+  transition: all 0.15s ease-in-out;
+}
+.neo-btn:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px #0f172a;
+}
+.neo-btn:active {
+  transform: translate(4px, 4px);
+  box-shadow: 0 0 0 #0f172a;
+}
+.neo-card {
+  border: 2px solid #0f172a;
+  box-shadow: 6px 6px 0px #0f172a;
+  transition: all 0.15s ease-in-out;
+  background: #ffffff;
+  border-radius: 0.75rem; /* rounded-xl */
+}
+.tool-card-link {
+  display: block;
+  transition: transform 0.15s ease-in-out;
+}
+.tool-card-link:hover {
+  transform: translate(2px, 2px);
+}
+.tool-card-link:hover .neo-card {
+  box-shadow: 4px 4px 0px #0f172a;
+}
+.tool-card-link:active {
+  transform: translate(6px, 6px);
+}
+.tool-card-link:active .neo-card {
+  box-shadow: 0 0 0 #0f172a;
+}
+.faq-item[open] summary svg {
+  transform: rotate(180deg);
+}
