@@ -1,18 +1,10 @@
 // server/api/subscribe.post.ts
 
 export default defineEventHandler(async (event) => {
-  // Lấy email từ body của request gửi từ client
+  // Lấy email từ body
   const { email } = await readBody(event)
 
-  // Lấy config đã cài ở nuxt.config.ts
-  const config = useRuntimeConfig()
-  const apiKey = config.convertkitApiKey
-  const formId = config.convertkitFormId
-
-  console.log(apiKey)
-  console.log(formId)
-  
-  // Validate dữ liệu đầu vào
+  // Validate email
   if (!email) {
     throw createError({
       statusCode: 400,
@@ -20,35 +12,34 @@ export default defineEventHandler(async (event) => {
     })
   }
 
-  if (!apiKey || !formId) {
+  // Khởi tạo Supabase client cho request này
+  const supabase = serverSupabaseClient(event)
+
+  // Insert dữ liệu vào bảng 'subscribers'
+  const { data, error } = await supabase
+    .from('subscribers')
+    .insert({ email: email }) // Cột 'created_at' sẽ được DB tự động điền
+    .select()
+    .single() // Dùng .single() để nhận về một object thay vì một array
+
+  // Xử lý lỗi từ Supabase
+  if (error) {
+    console.error('Supabase Insert Error:', error)
+
+    // Check lỗi email đã tồn tại (unique constraint violation)
+    if (error.code === '23505') {
+      throw createError({
+        statusCode: 409, // 409 Conflict - mã lỗi hợp lý cho việc trùng lặp
+        statusMessage: 'This email has already been subscribed.',
+      })
+    }
+
+    // Các lỗi khác
     throw createError({
       statusCode: 500,
-      statusMessage: 'Server configuration error.',
+      statusMessage: error.message || 'Failed to subscribe.',
     })
   }
 
-  const url = `https://api.convertkit.com/v3/forms/${formId}/subscribe`
-
-  try {
-    // Gọi API của ConvertKit từ server của cậu
-    const response = await $fetch(url, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json; charset=utf-8',
-      },
-      body: {
-        api_key: apiKey,
-        email: email,
-      },
-    })
-
-    return { success: true, data: response }
-
-  } catch (error: any) {
-    console.error('ConvertKit API Error:', error.data)
-    throw createError({
-      statusCode: error.statusCode || 500,
-      statusMessage: error.data?.message || 'Failed to subscribe.',
-    })
-  }
+  return { success: true, data: data }
 })
