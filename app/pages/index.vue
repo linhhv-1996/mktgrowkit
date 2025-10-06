@@ -147,7 +147,7 @@ async function subscribe() {
         <section id="from-the-builder" class="py-12 sm:py-16">
             <div class="container mx-auto px-6 max-w-4xl">
                 <div class="text-center mb-12">
-                    <img src="https://pbs.twimg.com/profile_images/1953022266650050561/eKUjHUYE_400x400.jpg" alt="Founder's Avatar"
+                    <img src="/avt.jpg" alt="Founder's Avatar"
                         class="w-28 h-28 rounded-full mx-auto mb-6 border-2 border-slate-900" />
                     <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900">From The Builder</h2>
                     <p class="mt-2 text-slate-600">For builders, by a builder.</p>
