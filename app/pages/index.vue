@@ -1,11 +1,9 @@
 <script setup>
 useHead({
-    // SỬA 1: Title cụ thể hơn, nhắm thẳng vào e-commerce và các từ khóa chính
     title: 'mktgrowkit - Free ROAS, AOV & CPM Calculators for E-commerce',
     meta: [
         {
             name: 'description',
-            // SỬA 2: Description tập trung vào đối tượng và lợi ích cốt lõi (lợi nhuận)
             content: 'The essential toolkit for e-commerce owners & DTC brands. Calculate ROAS, AOV, CPM, and get the data you need to boost profit and grow smarter.'
         },
     ],
@@ -64,7 +62,9 @@ async function subscribe() {
 
                 <!-- SỬA 4: Sub-headline nói chuyện trực tiếp với đối tượng mục tiêu -->
                 <p class="mt-4 max-w-2xl mx-auto text-base text-slate-600">
-                    The e-commerce toolkit that actually makes sense. We provide sharp, no-fluff tools to help <span class="font-semibold text-slate-900">DTC brands and Shopify owners</span> make every ad dollar count.
+                    The e-commerce toolkit that actually makes sense. We provide sharp, no-fluff tools to help <span
+                        class="font-semibold text-slate-900">DTC brands and Shopify owners</span> make every ad dollar
+                    count.
                 </p>
 
                 <div class="mt-8 flex justify-center gap-4">
@@ -81,9 +81,9 @@ async function subscribe() {
                     <p class="mt-2 text-slate-600">Essential calculators to sharpen your marketing decisions.</p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Các tool card giữ nguyên, chúng đã rất tốt rồi -->
-                    <NuxtLink to="/roas-calculator" class="tool-card-link group">
+                <div class="flex flex-wrap justify-center gap-8">
+
+                    <NuxtLink to="/roas-calculator" class="tool-card-link group w-full md:basis-[45%] lg:basis-[30%]">
                         <div class="neo-card p-6 h-full">
                             <div
                                 class="flex items-center justify-center h-12 w-12 rounded-lg bg-amber-100 mb-5 border-2 border-slate-900">
@@ -106,7 +106,8 @@ async function subscribe() {
                         </div>
                     </NuxtLink>
 
-                    <NuxtLink to="/cpm-cpc-calculator" class="tool-card-link group">
+                    <NuxtLink to="/cpm-cpc-calculator"
+                        class="tool-card-link group w-full md:basis-[45%] lg:basis-[30%]">
                         <div class="neo-card p-6 h-full">
                             <div
                                 class="flex items-center justify-center h-12 w-12 rounded-lg bg-sky-100 mb-5 border-2 border-slate-900">
@@ -125,7 +126,7 @@ async function subscribe() {
                         </div>
                     </NuxtLink>
 
-                    <NuxtLink to="/aov-calculator" class="tool-card-link group">
+                    <NuxtLink to="/aov-calculator" class="tool-card-link group w-full md:basis-[45%] lg:basis-[30%]">
                         <div class="neo-card p-6 h-full">
                             <div
                                 class="flex items-center justify-center h-12 w-12 rounded-lg bg-emerald-100 mb-5 border-2 border-slate-900">
@@ -145,7 +146,53 @@ async function subscribe() {
                                     class="inline-block transition-transform group-hover:translate-x-1">→</span></p>
                         </div>
                     </NuxtLink>
+
+                    <NuxtLink to="/markup-calculator" class="tool-card-link group w-full md:basis-[45%] lg:basis-[30%]">
+                        <div class="neo-card p-6 h-full">
+                            <div
+                                class="flex items-center justify-center h-12 w-12 rounded-lg bg-violet-100 mb-5 border-2 border-slate-900">
+                                <svg class="w-6 h-6 text-violet-600" fill="none" stroke="currentColor" stroke-width="2"
+                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M9.568 3H5.25A2.25 2.25 0 003 5.25v4.318c0 .597.237 1.17.659 1.591l9.581 9.581c.699.699 1.78.872 2.607.33a18.095 18.095 0 005.223-5.223c.542-.827.369-1.908-.33-2.607L11.16 3.66A2.25 2.25 0 009.568 3z">
+                                    </path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 6h.008v.008H6V6z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-base font-bold text-slate-900 mb-1">Markup Calculator</h3>
+                            <p class="text-sm text-slate-600 mb-5">Set the perfect price for your products. Calculate
+                                selling price and gross
+                                profit from cost and markup percentage.</p>
+                            <p class="font-bold text-sm text-violet-600 group-hover:text-violet-800 transition-colors">
+                                Calculate Markup & Price <span
+                                    class="inline-block transition-transform group-hover:translate-x-1">→</span></p>
+                        </div>
+                    </NuxtLink>
+
+                    <NuxtLink to="/cac-calculator"
+                        class="tool-card-link group w-full md:basis-[45%] lg:basis-[30%]">
+                        <div class="neo-card p-6 h-full">
+                            <div
+                                class="flex items-center justify-center h-12 w-12 rounded-lg bg-sky-100 mb-5 border-2 border-slate-900">
+                                <svg class="w-6 h-6 text-sky-600" fill="none" stroke="currentColor" stroke-width="2"
+                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M19 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zM4 19.235v-.11a6.375 6.375 0 0112.75 0v.109A12.318 12.318 0 0110.374 21c-2.331 0-4.512-.645-6.374-1.766z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <h3 class="text-base font-bold text-slate-900 mb-1">CAC Calculator</h3>
+                            <p class="text-sm text-slate-600 mb-5">Find out exactly how much you pay to get each new
+                                customer. Measure your
+                                marketing profitability and make smarter budget decisions.</p>
+                            <p class="font-bold text-sm text-sky-600 group-hover:text-sky-800 transition-colors">
+                                Calculate Your CAC <span
+                                    class="inline-block transition-transform group-hover:translate-x-1">→</span></p>
+                        </div>
+                    </NuxtLink>
+
                 </div>
+
             </div>
         </section>
 
@@ -153,26 +200,35 @@ async function subscribe() {
         <section id="faq" class="py-12 sm:py-16">
             <div class="container mx-auto px-6 max-w-4xl">
                 <div class="text-center mb-12">
-                    <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900">Your E-commerce Questions, Answered</h2>
+                    <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900">Your E-commerce Questions, Answered
+                    </h2>
                     <p class="mt-2 text-slate-600">A few common questions we get from founders.</p>
                 </div>
                 <div class="space-y-6">
                     <div class="neo-card p-6 bg-white">
                         <h3 class="font-bold text-slate-900 mb-2">What is a good ROAS for an e-commerce business?</h3>
                         <p class="text-sm text-slate-700 leading-relaxed">
-                            While it varies by industry and profit margins, a common benchmark for a good ROAS is <strong>4:1</strong> — meaning you generate $4 for every $1 spent on ads. A ratio of 2:1 is often considered the break-even point after accounting for product costs. Our tools help you find the exact number you need to be profitable.
+                            While it varies by industry and profit margins, a common benchmark for a good ROAS is
+                            <strong>4:1</strong> — meaning you generate $4 for every $1 spent on ads. A ratio of 2:1 is
+                            often considered the break-even point after accounting for product costs. Our tools help you
+                            find the exact number you need to be profitable.
                         </p>
                     </div>
-                     <div class="neo-card p-6 bg-white">
+                    <div class="neo-card p-6 bg-white">
                         <h3 class="font-bold text-slate-900 mb-2">Are these tools really free to use?</h3>
                         <p class="text-sm text-slate-700 leading-relaxed">
-                           Yes, all the calculators on our site are 100% free to use, with no sign-up required. Our mission is to provide accessible, high-quality tools for the community. In the future, we may introduce advanced AI-powered tools that operate on a freemium model.
+                            Yes, all the calculators on our site are 100% free to use, with no sign-up required. Our
+                            mission is to provide accessible, high-quality tools for the community. In the future, we
+                            may introduce advanced AI-powered tools that operate on a freemium model.
                         </p>
                     </div>
-                     <div class="neo-card p-6 bg-white">
-                        <h3 class="font-bold text-slate-900 mb-2">What makes mktgrowkit different from other tool suites?</h3>
+                    <div class="neo-card p-6 bg-white">
+                        <h3 class="font-bold text-slate-900 mb-2">What makes mktgrowkit different from other tool
+                            suites?</h3>
                         <p class="text-sm text-slate-700 leading-relaxed">
-                            Simplicity and focus. We are not a bloated, all-in-one platform. Each tool is designed to do one job exceptionally well, with zero fluff or confusing dashboards. We're built by a solo builder for founders and marketers who value speed and clarity.
+                            Simplicity and focus. We are not a bloated, all-in-one platform. Each tool is designed to do
+                            one job exceptionally well, with zero fluff or confusing dashboards. We're built by a solo
+                            builder for founders and marketers who value speed and clarity.
                         </p>
                     </div>
                 </div>
@@ -194,9 +250,9 @@ async function subscribe() {
                         <p class="text-sm text-slate-700 leading-relaxed">
                             Tired of bloated marketing suites that slow you down? I was too.
 
-As a dev focused on profit, I built this toolkit with one rule: zero fluff.
+                            As a dev focused on profit, I built this toolkit with one rule: zero fluff.
 
-Just the numbers you need to get back to growing your business.
+                            Just the numbers you need to get back to growing your business.
                         </p>
                     </div>
                     <div class="neo-card p-6 text-center bg-emerald-50">
@@ -219,16 +275,10 @@ Just the numbers you need to get back to growing your business.
                 <ClientOnly>
                     <div>
                         <form @submit.prevent="subscribe" class="flex flex-col md:flex-row gap-3 justify-center">
-                            <input 
-                                v-model="email"
-                                type="email" 
-                                placeholder="you@company.com" 
-                                required
+                            <input v-model="email" type="email" placeholder="you@company.com" required
                                 :disabled="isLoading"
                                 class="w-full md:w-auto flex-grow px-4 py-3 rounded-lg text-sm border-2 border-slate-900 focus:outline-none disabled:bg-slate-100 disabled:cursor-not-allowed" />
-                            <button 
-                                type="submit"
-                                :disabled="isLoading"
+                            <button type="submit" :disabled="isLoading"
                                 class="px-6 py-3 font-bold text-slate-900 bg-sky-400 rounded-lg neo-btn disabled:bg-sky-200 disabled:cursor-not-allowed">
                                 {{ isLoading ? 'Subscribing...' : 'Subscribe' }}
                             </button>
