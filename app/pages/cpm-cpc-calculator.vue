@@ -4,7 +4,6 @@ definePageMeta({
 });
 
 useHead({
-  // SEO CHANGE 1: Tối ưu Title và Meta Description
   title: 'Free CPM & CPC Calculator (Instant Results) | mktgrowkit',
   meta: [
     { name: 'description', content: 'Instantly calculate CPM, CPC, and CTR for your Google Ads, Facebook, or YouTube campaigns. Fast, free, and no-fluff ad metrics calculator.' }
