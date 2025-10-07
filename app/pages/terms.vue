@@ -1,3 +1,18 @@
+<script setup>
+useHead({
+    title: 'Terms of Service | mktgrowkit',
+    meta: [
+        {
+            name: 'description',
+            content: 'Please read our Terms of Service carefully before using the tools and resources provided by mktgrowkit. Your access to and use of the service is conditioned on your acceptance.'
+        },
+    ],
+    link: [
+        { rel: 'canonical', href: 'https://mktgrowkit.com/terms' }
+    ]
+})
+</script>
+
 <template>
     <div>
         <section class="py-12 sm:py-12">

@@ -1,3 +1,18 @@
+<script setup>
+useHead({
+    title: 'Privacy Policy | mktgrowkit',
+    meta: [
+        {
+            name: 'description',
+            content: 'Learn how mktgrowkit collects, uses, and protects your personal data. We are committed to safeguarding the privacy of our website visitors and users.'
+        },
+    ],
+    link: [
+        { rel: 'canonical', href: 'https://mktgrowkit.com/privacy' }
+    ]
+})
+</script>
+
 <template>
     <div>
         <section class="py-12 sm:py-12">
