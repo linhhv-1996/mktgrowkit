@@ -18,7 +18,7 @@ useHead({
     },
   ],
   link: [
-    { rel: 'canonical', href: 'https://mktgrowkit.com/customer-acquisition-cost-calculator' }
+    { rel: 'canonical', href: 'https://mktgrowkit.com/cac-calculator' }
   ],
   script: [
     {
@@ -178,7 +178,7 @@ const reset = () => {
     
     <section class="py-10">
       <div class="container mx-auto px-6 text-center max-w-3xl">
-        <NuxtLink to="/tools" class="inline-block px-6 py-3 font-bold text-slate-900 bg-violet-300 rounded-lg neo-btn transition-all">← Back to All Tools</NuxtLink>
+        <NuxtLink to="/" class="inline-block px-6 py-3 font-bold text-slate-900 bg-violet-300 rounded-lg neo-btn transition-all">← Back to All Tools</NuxtLink>
       </div>
     </section>
   </div>
