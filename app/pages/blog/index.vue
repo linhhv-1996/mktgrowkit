@@ -24,6 +24,14 @@ useHead({
                         Insights on marketing, growth, and the #buildinpublic journey of mktgrowkit.
                     </p>
                 </div>
+                
+                <!-- SỬA: Thêm đoạn giới thiệu để tăng word count và cung cấp bối cảnh SEO -->
+                <div class="prose prose-slate max-w-none mb-16 text-center text-slate-700">
+                    <p>
+                        Welcome to the official blog of mktgrowkit. This is where we share practical strategies, actionable guides, and transparent lessons from building a bootstrapped SaaS for the e-commerce community. Whether you're looking to optimize your ad spend, increase your store's conversion rate, or just follow along with our #buildinpublic journey, you'll find valuable insights here.
+                    </p>
+                </div>
+
 
                 <div>
                     <NuxtLink 

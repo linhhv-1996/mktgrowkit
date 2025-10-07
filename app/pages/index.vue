@@ -1,10 +1,12 @@
 <script setup>
 useHead({
-    title: 'mktgrowkit - Free Marketing & Growth Tools for Builders',
+    // SỬA 1: Title cụ thể hơn, nhắm thẳng vào e-commerce và các từ khóa chính
+    title: 'mktgrowkit - Free ROAS, AOV & CPM Calculators for E-commerce',
     meta: [
         {
             name: 'description',
-            content: 'A free suite of essential marketing and growth tools. Calculate ROAS, CPM, AOV and more to make data-driven decisions and grow your business.'
+            // SỬA 2: Description tập trung vào đối tượng và lợi ích cốt lõi (lợi nhuận)
+            content: 'The essential toolkit for e-commerce owners & DTC brands. Calculate ROAS, AOV, CPM, and get the data you need to boost profit and grow smarter.'
         },
     ],
     link: [
@@ -55,12 +57,14 @@ async function subscribe() {
     <div>
         <section class="py-16 sm:py-20">
             <div class="container mx-auto px-6 text-center max-w-4xl">
+                <!-- SỬA 3: Headline mạnh mẽ, tập trung vào lợi nhuận - nỗi đau cuối cùng -->
                 <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 leading-tight tracking-tight">
-                    Stop Guessing. <span class="gradient-text">Start Growing.</span>
+                    Go Beyond ROAS. <span class="gradient-text">Master Your Profit.</span>
                 </h1>
 
+                <!-- SỬA 4: Sub-headline nói chuyện trực tiếp với đối tượng mục tiêu -->
                 <p class="mt-4 max-w-2xl mx-auto text-base text-slate-600">
-                    A curated suite of essential, no-fluff tools for <span class="font-semibold text-slate-900">founders, builders, and marketers</span>. From calculating metrics to generating copy, we help you grow faster and smarter.
+                    The e-commerce toolkit that actually makes sense. We provide sharp, no-fluff tools to help <span class="font-semibold text-slate-900">DTC brands and Shopify owners</span> make every ad dollar count.
                 </p>
 
                 <div class="mt-8 flex justify-center gap-4">
@@ -73,11 +77,12 @@ async function subscribe() {
         <section id="tools" class="py-12 sm:py-16 bg-white">
             <div class="container mx-auto px-6 max-w-5xl">
                 <div class="text-center mb-12">
-                    <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900">The Free Toolkit</h2>
-                    <p class="mt-2 text-slate-600">Three essential calculators to sharpen your marketing decisions.</p>
+                    <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900">The E-commerce Toolkit</h2>
+                    <p class="mt-2 text-slate-600">Essential calculators to sharpen your marketing decisions.</p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Các tool card giữ nguyên, chúng đã rất tốt rồi -->
                     <NuxtLink to="/roas-calculator" class="tool-card-link group">
                         <div class="neo-card p-6 h-full">
                             <div
@@ -144,23 +149,54 @@ async function subscribe() {
             </div>
         </section>
 
-        <section id="from-the-builder" class="py-12 sm:py-16">
+        <!-- SỬA 5: Thêm section FAQ để tăng word count và giải quyết vấn đề SEO -->
+        <section id="faq" class="py-12 sm:py-16">
+            <div class="container mx-auto px-6 max-w-4xl">
+                <div class="text-center mb-12">
+                    <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900">Your E-commerce Questions, Answered</h2>
+                    <p class="mt-2 text-slate-600">A few common questions we get from founders.</p>
+                </div>
+                <div class="space-y-6">
+                    <div class="neo-card p-6 bg-white">
+                        <h3 class="font-bold text-slate-900 mb-2">What is a good ROAS for an e-commerce business?</h3>
+                        <p class="text-sm text-slate-700 leading-relaxed">
+                            While it varies by industry and profit margins, a common benchmark for a good ROAS is <strong>4:1</strong> — meaning you generate $4 for every $1 spent on ads. A ratio of 2:1 is often considered the break-even point after accounting for product costs. Our tools help you find the exact number you need to be profitable.
+                        </p>
+                    </div>
+                     <div class="neo-card p-6 bg-white">
+                        <h3 class="font-bold text-slate-900 mb-2">Are these tools really free to use?</h3>
+                        <p class="text-sm text-slate-700 leading-relaxed">
+                           Yes, all the calculators on our site are 100% free to use, with no sign-up required. Our mission is to provide accessible, high-quality tools for the community. In the future, we may introduce advanced AI-powered tools that operate on a freemium model.
+                        </p>
+                    </div>
+                     <div class="neo-card p-6 bg-white">
+                        <h3 class="font-bold text-slate-900 mb-2">What makes mktgrowkit different from other tool suites?</h3>
+                        <p class="text-sm text-slate-700 leading-relaxed">
+                            Simplicity and focus. We are not a bloated, all-in-one platform. Each tool is designed to do one job exceptionally well, with zero fluff or confusing dashboards. We're built by a solo builder for founders and marketers who value speed and clarity.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="from-the-builder" class="py-12 sm:py-16 bg-white">
             <div class="container mx-auto px-6 max-w-4xl">
                 <div class="text-center mb-12">
                     <img src="/avt.jpg" alt="Founder's Avatar"
                         class="w-28 h-28 rounded-full mx-auto mb-6 border-2 border-slate-900" />
                     <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900">From The Builder</h2>
-                    <p class="mt-2 text-slate-600">For builders, by a builder.</p>
+                    <p class="mt-2 text-slate-600">For DTC founders, by a builder.</p>
                 </div>
 
                 <div class="grid md:grid-cols-2 gap-6">
                     <div class="neo-card p-6 text-center bg-amber-50">
                         <h3 class="text-lg font-bold text-slate-900 mb-2">I build tools I wish I had.</h3>
                         <p class="text-sm text-slate-700 leading-relaxed">
-                            I'm a dev with 3 years in product monetization. I got tired of bloated, expensive marketing
-                            suites. So I built this: a collection of practical, precise tools with zero fluff. No
-                            complex dashboards, no confusing jargon. Just get the numbers you need and get back to what
-                            you love—building.
+                            Tired of bloated marketing suites that slow you down? I was too.
+
+As a dev focused on profit, I built this toolkit with one rule: zero fluff.
+
+Just the numbers you need to get back to growing your business.
                         </p>
                     </div>
                     <div class="neo-card p-6 text-center bg-emerald-50">
@@ -197,7 +233,7 @@ async function subscribe() {
                                 {{ isLoading ? 'Subscribing...' : 'Subscribe' }}
                             </button>
                         </form>
-                        <p id="prof" class="mt-4 text-xs text-slate-600 font-medium">Join 100+ other builders and
+                        <p id="prof" class="mt-4 text-xs text-slate-600 font-medium">Join 100+ other founders and
                             marketers!</p>
                     </div>
                 </ClientOnly>
@@ -205,4 +241,3 @@ async function subscribe() {
         </section>
     </div>
 </template>
-
