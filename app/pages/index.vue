@@ -9,7 +9,42 @@ useHead({
     ],
     link: [
         { rel: 'canonical', href: 'https://mktgrowkit.com/' }
-    ]
+    ],
+    script: [
+        {
+            type: 'application/ld+json',
+            children: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "What is a good ROAS for an e-commerce business?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "While it varies by industry and profit margins, a common benchmark for a good ROAS is 4:1 — meaning you generate $4 for every $1 spent on ads. A ratio of 2:1 is often considered the break-even point after accounting for product costs. Our tools help you find the exact number you need to be profitable."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Are these tools really free to use?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes, all the calculators on our site are 100% free to use, with no sign-up required. Our mission is to provide accessible, high-quality tools for the community. In the future, we may introduce advanced AI-powered tools that operate on a freemium model."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What makes mktgrowkit different from other tool suites?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Simplicity and focus. We are not a bloated, all-in-one platform. Each tool is designed to do one job exceptionally well, with zero fluff or confusing dashboards. We're built by a solo builder for founders and marketers who value speed and clarity."
+                        }
+                    }
+                ]
+            })
+        }
+    ],
 })
 
 // State để lưu email từ input
@@ -19,6 +54,7 @@ const isLoading = ref(false)
 // State để hiển thị message sau khi submit
 const message = ref('')
 const isError = ref(false)
+const showSuccessPopup = ref(false)
 
 async function subscribe() {
     if (!email.value) {
@@ -32,13 +68,13 @@ async function subscribe() {
     isError.value = false
 
     try {
-        // Gọi tới API route `/api/subscribe` vừa tạo
         await $fetch('/api/subscribe', {
             method: 'POST',
             body: { email: email.value }
         })
 
-        message.value = "🎉 Success! Please check your email to confirm."
+        message.value = ""
+        showSuccessPopup.value = true
         email.value = ''
 
     } catch (error) {
@@ -50,6 +86,12 @@ async function subscribe() {
 }
 
 </script>
+
+<style>
+html {
+    scroll-behavior: smooth;
+}
+</style>
 
 <template>
     <div>
@@ -67,9 +109,17 @@ async function subscribe() {
                     count.
                 </p>
 
-                <div class="mt-8 flex justify-center gap-4">
+                <!-- <div class="mt-8 flex justify-center gap-4">
                     <a href="#tools" class="px-7 py-3 font-bold text-slate-900 bg-violet-300 rounded-lg neo-btn">Explore
                         Free Tools →</a>
+                    <a href="#pro-tools" class="text-sm font-semibold text-slate-600 hover:text-slate-900 transition-colors">Or see our Pro tools ✨</a>
+                </div> -->
+                <div class="mt-8 flex flex-col items-center justify-center gap-4">
+                    <a href="#tools" class="px-7 py-3 font-bold text-slate-900 bg-violet-300 rounded-lg neo-btn">Explore
+                        Free Tools →</a>
+                    <a href="#pro-tools"
+                        class="text-sm font-semibold text-slate-600 hover:text-slate-900 transition-colors">Or see our
+                        Pro tools ✨</a>
                 </div>
             </div>
         </section>
@@ -169,8 +219,7 @@ async function subscribe() {
                         </div>
                     </NuxtLink>
 
-                    <NuxtLink to="/cac-calculator"
-                        class="tool-card-link group w-full md:basis-[45%] lg:basis-[30%]">
+                    <NuxtLink to="/cac-calculator" class="tool-card-link group w-full md:basis-[45%] lg:basis-[30%]">
                         <div class="neo-card p-6 h-full">
                             <div
                                 class="flex items-center justify-center h-12 w-12 rounded-lg bg-sky-100 mb-5 border-2 border-slate-900">
@@ -193,6 +242,71 @@ async function subscribe() {
 
                 </div>
 
+            </div>
+        </section>
+
+        <!-- Pro tools -->
+        <section id="pro-tools" class="py-12 sm:py-16 bg-slate-50 border-t-2 border-slate-900">
+            <div class="container mx-auto px-6 max-w-5xl">
+                <div class="text-center mb-12">
+                    <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900">Go Pro. Automate Your Growth.</h2>
+                    <p class="mt-2 text-slate-600">AI-powered tools to save you time and optimize results.</p>
+                </div>
+
+                <div class="flex flex-wrap justify-center gap-8">
+
+                    <a href="#newsletter" class="tool-card-link group w-full md:basis-[45%] lg:basis-[30%]">
+                        <div class="neo-card p-6 h-full relative bg-white">
+                            <div
+                                class="absolute top-4 right-4 px-2 py-0.5 text-xs font-bold text-slate-900 bg-amber-300 rounded-full border-2 border-slate-900">
+                                PRO
+                            </div>
+                            <div
+                                class="flex items-center justify-center h-12 w-12 rounded-lg bg-rose-100 mb-5 border-2 border-slate-900">
+                                <svg class="w-6 h-6 text-rose-600" fill="none" stroke="currentColor" stroke-width="2"
+                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69a.75.75 0 01.981.981A10.503 10.503 0 0118 18a10.5 10.5 0 01-10.5-10.5c0-1.741.54-3.418 1.472-4.818a.75.75 0 01.819-.162z">
+                                    </path>
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M12 18a.75.75 0 00.75-.75V15a.75.75 0 00-1.5 0v2.25A.75.75 0 0012 18zm-2.25-6.75a.75.75 0 00.75-.75V9a.75.75 0 00-1.5 0v1.5a.75.75 0 00.75.75zm4.5 0a.75.75 0 00.75-.75V9a.75.75 0 00-1.5 0v1.5a.75.75 0 00.75.75zM12 6a.75.75 0 00.75-.75V3a.75.75 0 00-1.5 0v2.25A.75.75 0 0012 6z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <h3 class="text-base font-bold text-slate-900 mb-1">AI Ad Copy Generator</h3>
+                            <p class="text-sm text-slate-600 mb-5">Generate high-converting ad copy for Facebook &
+                                Google in seconds. Stop guessing, start converting.</p>
+                            <p class="font-bold text-sm text-rose-600 group-hover:text-rose-800 transition-colors">
+                                Join the Waitlist <span
+                                    class="inline-block transition-transform group-hover:translate-x-1">→</span></p>
+                        </div>
+                    </a>
+
+                    <a href="#newsletter" class="tool-card-link group w-full md:basis-[45%] lg:basis-[30%]">
+                        <div class="neo-card p-6 h-full relative bg-white">
+                            <div
+                                class="absolute top-4 right-4 px-2 py-0.5 text-xs font-bold text-slate-900 bg-amber-300 rounded-full border-2 border-slate-900">
+                                PRO
+                            </div>
+                            <div
+                                class="flex items-center justify-center h-12 w-12 rounded-lg bg-teal-100 mb-5 border-2 border-slate-900">
+                                <svg class="w-6 h-6 text-teal-600" fill="none" stroke="currentColor" stroke-width="2"
+                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <h3 class="text-base font-bold text-slate-900 mb-1">Social & Ad Previewer</h3>
+                            <p class="text-sm text-slate-600 mb-5">Preview how your links and ads will look on social
+                                media before you post. Fix OG tags and optimize your creative instantly.</p>
+                            <p class="font-bold text-sm text-teal-600 group-hover:text-teal-800 transition-colors">
+                                Join the Waitlist <span
+                                    class="inline-block transition-transform group-hover:translate-x-1">→</span></p>
+                        </div>
+                    </a>
+
+                </div>
             </div>
         </section>
 
@@ -269,9 +383,12 @@ async function subscribe() {
 
         <section id="newsletter" class="py-12 sm:py-16 bg-white border-t-2 border-b-2 border-slate-900">
             <div class="container mx-auto px-6 text-center max-w-2xl">
-                <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900 mb-2">Join the Journey.</h2>
-                <p class="text-slate-700 mb-6">Get new tool alerts, exclusive templates, and follow my #buildinpublic
-                    story. No spam, just pure value.</p>
+                <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900 mb-2">Get an Unfair Advantage.</h2>
+                <p class="text-slate-700 mb-6">
+                    Join the waitlist for our AI Pro Tools and get early access, 
+            <span class="font-semibold text-slate-900">early-adopter discounts</span>, 
+            and exclusive templates. Be the first to level up.
+                </p>
                 <ClientOnly>
                     <div>
                         <form @submit.prevent="subscribe" class="flex flex-col md:flex-row gap-3 justify-center">
@@ -289,5 +406,8 @@ async function subscribe() {
                 </ClientOnly>
             </div>
         </section>
+
+        <SuccessPopup :show="showSuccessPopup" @close="showSuccessPopup = false" />
+
     </div>
 </template>
