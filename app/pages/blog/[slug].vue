@@ -11,7 +11,7 @@ if (!article) {
 }
 
 useHead({
-    title: `${article.title} | mktgrowkit`,
+    title: `${article.title}`,
     meta: [
         { name: 'description', content: article.excerpt }
     ],
