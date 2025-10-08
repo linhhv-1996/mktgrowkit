@@ -42,7 +42,8 @@ export default defineNuxtConfig({
     },
   },
   css: [
-    '~/assets/css/main.css'
+    '~/assets/css/main.css',
+    '~/assets/css/fonts.css',
   ],
   app: {
     head: {
@@ -55,9 +56,6 @@ export default defineNuxtConfig({
       viewport: 'width=device-width, initial-scale=1',
       link: [
         { rel: 'icon', type: 'image/png', href: 'https://placehold.co/32x32/0f172a/f1f5f9?text=M' },
-        { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
-        { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
-        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap' }
       ],
       bodyAttrs: {
         class: 'bg-slate-100 text-slate-800 antialiased'
