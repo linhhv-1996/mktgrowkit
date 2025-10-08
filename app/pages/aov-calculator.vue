@@ -4,7 +4,7 @@ definePageMeta({
 });
 
 useHead({
-  title: 'AOV Calculator | mktgrowkit – Free Marketing Tools',
+  title: 'AOV Calculator – Average Order Value',
   meta: [
     { name: 'description', content: 'Fast, no‑fluff AOV calculator. Compute your Average Order Value from total revenue and number of orders. Includes formula, examples, and tips to increase AOV.' }
   ],

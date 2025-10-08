@@ -240,6 +240,27 @@ html {
                         </div>
                     </NuxtLink>
 
+                    <NuxtLink to="/slogan-generator" class="tool-card-link group w-full md:basis-[45%] lg:basis-[30%]">
+                        <div class="neo-card p-6 h-full">
+                            <div
+                                class="flex items-center justify-center h-12 w-12 rounded-lg bg-violet-100 mb-5 border-2 border-slate-900">
+                                <svg class="w-6 h-6 text-violet-600" fill="none" stroke="currentColor" stroke-width="2"
+                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.676.75.75 0 01.819.162l3.198 3.198a.75.75 0 01-1.06 1.06l-3.198-3.198a8.97 8.97 0 00-3.463.676A9 9 0 0115 21a9 9 0 01-9-9 8.97 8.97 0 01-.676-3.463L1.718 9.528a.75.75 0 01.162-.819l3.198-3.198a.75.75 0 011.06 0l3.198 3.198zM16 12a4 4 0 11-8 0 4 4 0 018 0z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <h3 class="text-base font-bold text-slate-900 mb-1">Free Slogan Generator</h3>
+                            <p class="text-sm text-slate-600 mb-5">Instantly create hundreds of catchy slogans and
+                                taglines for your brand. Find the perfect phrase to make your business stand out, all
+                                for free.</p>
+                            <p class="font-bold text-sm text-violet-600 group-hover:text-violet-800 transition-colors">
+                                Generate Slogans <span
+                                    class="inline-block transition-transform group-hover:translate-x-1">→</span></p>
+                        </div>
+                    </NuxtLink>
+
                 </div>
 
             </div>
@@ -385,9 +406,9 @@ html {
             <div class="container mx-auto px-6 text-center max-w-2xl">
                 <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900 mb-2">Get an Unfair Advantage.</h2>
                 <p class="text-slate-700 mb-6">
-                    Join the waitlist for our AI Pro Tools and get early access, 
-            <span class="font-semibold text-slate-900">early-adopter discounts</span>, 
-            and exclusive templates. Be the first to level up.
+                    Join the waitlist for our AI Pro Tools and get early access,
+                    <span class="font-semibold text-slate-900">early-adopter discounts</span>,
+                    and exclusive templates. Be the first to level up.
                 </p>
                 <ClientOnly>
                     <div>
