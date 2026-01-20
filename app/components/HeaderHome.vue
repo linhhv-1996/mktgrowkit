@@ -15,22 +15,32 @@ const toggleMobileMenu = () => {
         <span>MKT<span class="gradient-text">GROWKIT</span></span>
         <span class="ml-1.5 w-2 h-2 bg-pink-500 rounded-full"></span>
       </NuxtLink>
+      
       <div class="flex items-center space-x-4 md:space-x-6">
         <a href="/#tools" class="hidden md:inline-block text-sm font-semibold text-slate-700 hover:text-slate-900 transition-colors">Free Tools</a>
         <a href="/#from-the-builder" class="hidden md:inline-block text-sm font-semibold text-slate-700 hover:text-slate-900 transition-colors">From The Builder</a>
         <a href="/blog" class="hidden md:inline-block text-sm font-semibold text-slate-700 hover:text-slate-900 transition-colors">Blog</a>
+        
+        <a href="https://toolkuai.com" target="_blank" class="hidden md:inline-block text-sm font-semibold text-pink-600 hover:text-pink-700 transition-colors items-center">
+          ToolKuai <span class="ml-0.5 text-[10px] bg-pink-100 px-1 rounded uppercase tracking-tighter">New</span>
+        </a>
+
         <a href="/#newsletter" class="px-4 py-2 text-sm font-bold text-slate-900 bg-sky-400 rounded-lg neo-btn whitespace-nowrap">Get Updates</a>
+        
         <button id="mobile-menu-button" class="md:hidden text-slate-800" aria-label="Toggle menu" @click="toggleMobileMenu">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path></svg>
         </button>
       </div>
     </nav>
+
     <div id="mobile-menu" :class="{ 'hidden': !isMobileMenuOpen }" class="md:hidden border-t-2 border-slate-900 bg-white">
-      <div class="container mx-auto px-6 py-3 max-w-5xl space-y-2">
+      <div class="container mx-auto px-6 py-4 max-w-5xl space-y-4">
         <a href="/#tools" class="block font-bold text-slate-800" @click="isMobileMenuOpen = false">Free Tools</a>
         <a href="/#from-the-builder" class="block font-bold text-slate-800" @click="isMobileMenuOpen = false">From The Builder</a>
-        <a href="/blog" class="block font-bold text-slate-800">Blog</a>
+        <a href="/blog" class="block font-bold text-slate-800" @click="isMobileMenuOpen = false">Blog</a>
+        <a href="https://toolkuai.com" target="_blank" class="block font-bold text-pink-600 pt-2 border-t border-slate-100" @click="isMobileMenuOpen = false">Try ToolKuai (New) ⚡</a>
       </div>
     </div>
   </header>
 </template>
+
